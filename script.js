@@ -47,7 +47,8 @@ if(i<isi.length){
 
 }else{
 
-    setTimeout(tampilGaleri,1500);
+    tampilGaleri();
+    mulaiCountdown();
 
 }
 
@@ -188,17 +189,19 @@ document.getElementById("iya").onclick = function () {
 }
 function peluk(){
 
-for(let i=0;i<200;i++){
+alert("🤗 Peluk Virtual Diterima ❤️");
 
-const love=document.createElement("div");
+for(let i=0;i<150;i++){
 
-love.innerHTML="💖";
+let love=document.createElement("div");
+
+love.innerHTML="❤️";
 
 love.className="love";
 
 love.style.left=Math.random()*100+"vw";
 
-love.style.fontSize=(20+Math.random()*40)+"px";
+love.style.fontSize=(20+Math.random()*35)+"px";
 
 document.body.appendChild(love);
 
@@ -206,11 +209,9 @@ setTimeout(()=>{
 
 love.remove();
 
-},5000);
+},6000);
 
 }
-
-alert("🤗 Peluk Virtual Terkirim!\nAku Sayang Kamu ❤️");
 
 }
 // ==========================
@@ -277,7 +278,7 @@ const love=document.createElement("div");
 
 love.className="cursor-love";
 
-love.innerHTML="💖";
+love.innerHTML="❤️";
 
 love.style.left=e.clientX+"px";
 
