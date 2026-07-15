@@ -53,9 +53,9 @@ if(i<isi.length){
 
 }
 const gambar = [
-    "images/foto1.png",
-    "images/foto2.png",
-    "images/foto3.png"
+    "foto1.png",
+    "foto2.png",
+    "foto3.png"
 ];
 
 let indexFoto = 0;
@@ -173,13 +173,9 @@ document.getElementById("iya").onclick = function () {
 
     firework();
 
-    document.getElementById("fireworks").style.display = "block";
-
     document.getElementById("ring").style.display = "block";
 
     setTimeout(() => {
-
-        document.getElementById("fireworks").style.display = "none";
 
         document.getElementById("ring").style.display = "none";
 
@@ -192,19 +188,17 @@ document.getElementById("iya").onclick = function () {
 }
 function peluk(){
 
-alert("🤗 Peluk Virtual Diterima ❤️");
+for(let i=0;i<200;i++){
 
-for(let i=0;i<150;i++){
+const love=document.createElement("div");
 
-let love=document.createElement("div");
-
-love.innerHTML="❤️";
+love.innerHTML="💖";
 
 love.className="love";
 
 love.style.left=Math.random()*100+"vw";
 
-love.style.fontSize=(20+Math.random()*35)+"px";
+love.style.fontSize=(20+Math.random()*40)+"px";
 
 document.body.appendChild(love);
 
@@ -212,9 +206,11 @@ setTimeout(()=>{
 
 love.remove();
 
-},6000);
+},5000);
 
 }
+
+alert("🤗 Peluk Virtual Terkirim!\nAku Sayang Kamu ❤️");
 
 }
 // ==========================
@@ -248,33 +244,29 @@ sakura.remove();
 
 function firework(){
 
-for(let i=0;i<30;i++){
+    for(let i=0;i<60;i++){
 
-const fw=document.createElement("div");
+        const fw=document.createElement("div");
 
-fw.className="firework";
+        fw.className="firework";
 
-fw.style.left=(window.innerWidth/2)+"px";
+        fw.style.left=(window.innerWidth/2 +
+            (Math.random()-0.5)*400)+"px";
 
-fw.style.top=(window.innerHeight/2)+"px";
+        fw.style.top=(window.innerHeight/2 +
+            (Math.random()-0.5)*400)+"px";
 
-fw.style.background=`hsl(${Math.random()*360},100%,60%)`;
+        fw.style.background=`hsl(${Math.random()*360},100%,60%)`;
 
-fw.style.transform=
-`translate(${(Math.random()-0.5)*500}px,
-${(Math.random()-0.5)*500}px)`;
+        document.body.appendChild(fw);
 
-document.body.appendChild(fw);
+        setTimeout(()=>{
+            fw.remove();
+        },1000);
 
-setTimeout(()=>{
-
-fw.remove();
-
-},1000);
+    }
 
 }
-
-}   
 // ==========================
 // Cursor Love
 // ==========================
