@@ -1,0 +1,647 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+background:linear-gradient(135deg,#0f172a,#111827,#1f2937);
+overflow-y:auto;
+overflow-x:hidden;
+color:white;
+padding:30px 0;
+}
+
+.container{
+width:90%;
+max-width:700px;
+padding:50px;
+margin:30px auto;
+border-radius:25px;
+text-align:center;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(255,105,180,.5);
+z-index:2;
+}
+
+h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+p{
+font-size:22px;
+margin-bottom:35px;
+line-height:35px;
+}
+
+button{
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:50px;
+background:#ff4f87;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px hotpink;
+}
+
+#surat{
+display:none;
+white-space:pre-line;
+font-size:20px;
+line-height:38px;
+margin-top:30px;
+}
+
+.stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:blink 3s infinite;
+}
+
+@keyframes blink{
+0%{opacity:.2;}
+50%{opacity:1;}
+100%{opacity:.2;}
+}
+
+.love{
+position:fixed;
+top:-30px;
+color:#ff5ca8;
+animation:fall 6s linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+#galeri{
+
+display:none;
+
+margin-top:35px;
+
+}
+
+#galeri h2{
+
+margin-bottom:20px;
+
+}
+
+#foto{
+
+width:320px;
+
+height:400px;
+
+object-fit:cover;
+
+padding:15px;
+background:white;
+
+border-radius:8px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.45),
+0 0 20px hotpink;
+
+transition:all .8s ease;
+
+transform:rotate(-3deg);
+
+}
+#countdown{
+
+display:none;
+
+margin-top:35px;
+
+}
+
+#waktu{
+
+font-size:30px;
+
+font-weight:bold;
+
+margin-top:15px;
+
+color:#ff80ab;
+
+text-shadow:0 0 15px hotpink;
+
+}
+#akhir{
+
+display:none;
+
+margin-top:40px;
+
+}
+
+.tombol{
+
+margin-top:20px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+#enggak{
+
+position:relative;
+
+}
+@media (max-width:768px){
+
+h1{
+font-size:32px;
+}
+
+p{
+font-size:18px;
+line-height:30px;
+}
+
+#foto{
+width:240px;
+height:320px;
+}
+
+.container{
+padding:25px;
+}
+
+#waktu{
+font-size:22px;
+}
+
+button{
+font-size:18px;
+padding:12px 28px;
+}
+
+}
+#ending{
+display:none;
+width:100%;
+min-height:100vh;
+background:linear-gradient(135deg,#ff5fa2,#ff87b7,#ffd6e8);
+padding:60px 20px;
+text-align:center;
+animation:fade 1s;
+}
+
+.ending-box{
+
+text-align:center;
+
+color:white;
+
+animation:zoom 1s;
+
+}
+
+#endingFoto{
+
+width:260px;
+
+border-radius:25px;
+
+box-shadow:0 0 35px hotpink;
+
+margin-bottom:25px;
+
+}
+
+.ending-box h1{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.ending-box p{
+
+font-size:24px;
+
+line-height:40px;
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(.6);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+/* ================= LOADING ================= */
+
+#loading{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#0f172a;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+animation:hilang 1s forwards;
+
+animation-delay:3s;
+
+}
+
+.love-loader{
+
+font-size:80px;
+
+animation:denyut 1s infinite;
+
+}
+
+#loading h1{
+
+margin-top:20px;
+
+font-size:42px;
+
+}
+
+#loading p{
+
+margin-top:15px;
+
+color:#ffd4e7;
+
+}
+
+@keyframes denyut{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes hilang{
+
+to{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+}
+/* ========= SAKURA ========= */
+
+.sakura{
+
+position:fixed;
+
+top:-50px;
+
+font-size:24px;
+
+pointer-events:none;
+
+animation:sakuraFall linear forwards;
+
+z-index:999;
+
+}
+
+@keyframes sakuraFall{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+/* ================= FIREWORKS ================= */
+
+.firework{
+
+position:fixed;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:white;
+
+pointer-events:none;
+
+animation:boom 1s forwards;
+
+}
+
+@keyframes boom{
+
+0%{
+
+transform:scale(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(18);
+
+opacity:0;
+
+}
+
+}
+/* ================= RING ================= */
+
+#ring{
+
+display:none;
+
+position:fixed;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%) scale(.2);
+
+font-size:120px;
+
+z-index:99999;
+
+animation:ringZoom 2s forwards;
+
+text-shadow:
+0 0 25px gold,
+0 0 50px gold,
+0 0 80px gold;
+
+}
+
+@keyframes ringZoom{
+
+0%{
+
+opacity:0;
+
+transform:translate(-50%,-50%) scale(.2) rotate(0deg);
+
+}
+
+40%{
+
+opacity:1;
+
+transform:translate(-50%,-50%) scale(1.3) rotate(180deg);
+
+}
+
+70%{
+
+transform:translate(-50%,-50%) scale(1) rotate(360deg);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translate(-50%,-50%) scale(.5);
+
+}
+
+}
+/* ===================== */
+/* Sakura */
+/* ===================== */
+
+#sakura{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:999;
+opacity:.8;
+}
+
+/* ===================== */
+/* Fireworks */
+/* ===================== */
+
+#fireworks{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:100%;
+height:100%;
+object-fit:cover;
+pointer-events:none;
+z-index:1000;
+}
+
+/* ===================== */
+/* Ring */
+/* ===================== */
+
+#ring{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(.2);
+width:220px;
+z-index:1001;
+animation:ringPop 1s forwards;
+}
+
+@keyframes ringPop{
+
+0%{
+opacity:0;
+transform:translate(-50%,-50%) scale(.2) rotate(-25deg);
+}
+
+60%{
+opacity:1;
+transform:translate(-50%,-50%) scale(1.15);
+}
+
+100%{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+}
+
+}
+@keyframes polaroid{
+
+0%{
+
+opacity:0;
+
+transform:scale(.7) rotate(-15deg);
+
+}
+
+50%{
+
+transform:scale(1.05) rotate(4deg);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1) rotate(-3deg);
+
+}
+
+}
+.cursor-love{
+
+position:fixed;
+
+pointer-events:none;
+
+font-size:18px;
+
+animation:loveFly .8s linear forwards;
+
+z-index:99999;
+
+}
+
+@keyframes loveFly{
+
+0%{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(-35px) scale(1.8);
+
+}
+
+}
